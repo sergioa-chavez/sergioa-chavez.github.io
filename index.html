@@ -2,15 +2,49 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Redirect</title>
-
-  <meta http-equiv="refresh" content="0; url=https://gnlquintero.atlassian.net/servicedesk/customer/portal/34">
+  <title>Portal</title>
 
   <script>
-    window.location.href = "https://gnlquintero.atlassian.net/servicedesk/customer/portal/34";
+    function abrir() {
+      window.open(
+        "https://gnlquintero.atlassian.net/servicedesk/customer/portal/34",
+        "_blank"
+      );
+    }
+
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById("btn").click();
+      }, 300);
+    };
   </script>
 
+  <style>
+    body {
+      background: #f3f2f1;
+      font-family: Segoe UI;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 16px;
+      background: #0078D7;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+
 </head>
+
 <body>
+
+<button id="btn" onclick="abrir()">
+  Abrir Portal
+</button>
+
 </body>
 </html>
