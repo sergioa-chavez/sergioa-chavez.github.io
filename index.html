@@ -2,39 +2,75 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Portal</title>
+  <title>Portal GNL</title>
 
   <script>
-    function abrir() {
+    function abrirPortal() {
       window.open(
         "https://gnlquintero.atlassian.net/servicedesk/customer/portal/34",
         "_blank"
       );
     }
 
-    window.onload = function() {
+    // intenta abrir automático
+    window.onload = function () {
       setTimeout(() => {
         document.getElementById("btn").click();
-      }, 300);
+      }, 500);
     };
   </script>
 
   <style>
     body {
+      font-family: Segoe UI, sans-serif;
       background: #f3f2f1;
-      font-family: Segoe UI;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
+
+    .card {
+      background: white;
+      width: 420px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .header {
+      height: 90px;
+      background: linear-gradient(90deg, #3b2970, #1f8a3b);
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0 0 10px 0;
+    }
+
+    p {
+      color: #666;
+    }
+
     button {
-      padding: 15px 25px;
-      font-size: 16px;
+      margin-top: 15px;
       background: #0078D7;
       color: white;
       border: none;
+      padding: 12px 22px;
+      font-size: 15px;
       border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005ea6;
     }
   </style>
 
@@ -42,9 +78,18 @@
 
 <body>
 
-<button id="btn" onclick="abrir()">
-  Abrir Portal
-</button>
+<div class="card" onclick="abrirPortal()">
+  <div class="header"></div>
+
+  <div class="content">
+    <h2>GNLQ Mesa de Servicio</h2>
+    <p>Accede al portal de soporte</p>
+
+    <button id="btn" onclick="abrirPortal()">
+      Abrir Portal
+    </button>
+  </div>
+</div>
 
 </body>
 </html>
